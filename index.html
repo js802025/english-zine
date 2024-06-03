@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <style>
+      body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  overflow:hidden;
+}
+
+.envelope {
+    position:relative;
+    background-color: #d4b075;
+    border: 2px solid #c3a56e;
+    width: 800px;
+    height: 600px;
+    border-radius: 5px;
+    z-index:1;
+}
+
+.envelope .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 300px solid transparent;
+    border-bottom: 300px solid transparent;
+    border-left: 150px solid #d4b075;
+    transform-origin: left center;
+    z-index: 2;
+   
+}
+
+.envelope .body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d4b075;
+    z-index: 1;
+}
+
+.sleeve {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+}
+
+@keyframes openFlap {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes slideAway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(300%);
+    }
+}
+@keyframes showZine {
+    0% {
+        display: none;
+    }
+    100% {
+        display:block !important;
+    }
+}
+    </style>
+  </head>
+  <body>
+    <iframe width="100%" height="100%"  style="display:none" src="https://www.youtube.com/embed/V7rp_QX4eWw?si=Bi9ltATSF_d53IWf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="zine"></iframe>
+<div class="envelope1">
+        <div class="envelope" onclick="document.getElementsByClassName('flap')[0].style.animation='openFlap 2s forwards';
+    document.getElementsByClassName('envelope1')[0].style.animation='slideAway 4s 2.25s forwards';
+  setTimeout(() => {
+    window.location.href='https://google.com'
+  }, 6250)">
+        <div class="flap"></div>
+        <div class="body" onclick="">
+          <div class="sleeve">
+          <img src="https://i.ibb.co/b1P5W3G/englishfinalsleeve.png"/>
+            <h2>Abood American Lit Final</h2>
+            <p>Click to Open</p>
+          </div>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
